@@ -6,6 +6,10 @@ variable "cluster_identifier" {
   type        = string
 }
 
+variable "engine" {
+  type        = string
+}
+
 variable "engine_version" {
   type        = string
   default     = ""
@@ -28,7 +32,8 @@ variable "vpc_security_group_ids" {
 }
 
 variable "instance_count" {
-  type        = string
+  type        = number
+  default     = 1
 }
 
 variable "instance_class" {

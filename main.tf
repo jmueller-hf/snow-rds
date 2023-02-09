@@ -15,11 +15,12 @@ provider "aws" {
   }
 }
 
-module "rds-mysql" {
-  source  = "app.terraform.io/healthfirst/rds-mysql/aws"
+module "rds" {
+  source  = "app.terraform.io/healthfirst/rds/aws"
   version = "1.0.0"
 
   cluster_identifier      = var.cluster_identifier
+  engine                  = var.engine
   engine_version          = var.engine_version
   availability_zones      = var.availability_zones
   database_name           = var.database_name
